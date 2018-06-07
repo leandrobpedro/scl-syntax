@@ -1,0 +1,21 @@
+{
+	"scope": "source.scl",
+
+	"completions": [
+		{ "trigger": "ob\tOB", "contents": "ORGANIZATION_BLOCK OBxxx\n\nVAR_TEMP\n\t// Reserved\n\tinfo : ARRAY[0..19] OF BYTE;\n\t// Temporary Variables\n\nEND_VAR\n\n\t// Statement\n\n\t;\nEND_ORGANIZATION_BLOCK\n" },
+		{ "trigger": "fb\tFB", "contents": "FUNCTION_BLOCK FBxxx\n\nVAR_TEMP\n\t// Temporary Variables\n\nEND_VAR\nVAR\n\t// Static Variables\n\nEND_VAR\n\n\t// Statement Section\n\t;\nEND_FUNCTION_BLOCK\n" },
+		{ "trigger": "fc\tFC", "contents": "FUNCTION FC${1:xxx} : ${2:INT}\n\nVAR_TEMP\n\t${3:// Temporary Variables}\n\nEND_VAR\n\n\t${4:// Statement Section}\n\t;\n\tFC${1:xxx} := ${5:100};\nEND_FUNCTION${0}\n" },
+		{ "trigger": "comment\tComment", "contents": "TITLE = 'Block Title'\n//\n// Block Comment...\n//\nVERSION: '1.0'\nAUTHOR: Author\nNAME: Name\nFAMILY: Family\n//\n" },
+		{ "trigger": "constant\tConstant", "contents": "CONST\n\t// Constants\n\nEND_CONST\n" },
+		{ "trigger": "parameter\tParamenter", "contents": "// Block Parameters\nVAR_INPUT\n\t// Input Parameters\n\nEND_VAR\n\nVAR_IN_OUT\n\t// I/O Parameters\nEND_VAR\n\nVAR_OUTPUT\n\t// Output Parameters\n\nEND_VAR\n" },
+		{ "trigger": "db\tDB", "contents": "DATA_BLOCK DBxxx\n//\n// Block Comment ...\n//\n\tSTRUCT\n\n\tEND_STRUCT\nBEGIN\n\nEND_DATA_BLOCK\n" },
+		{ "trigger": "instance\tInstance DB", "contents": "DATA_BLOCK DBxxx  FBxxx\n//\n// Block Comment...\n//\nBEGIN\n\nEND_DATA_BLOCK\n" },
+		{ "trigger": "dbref\tDB Referencing UDT", "contents": "DATA_BLOCK DBxxx  UDTxxx\nBEGIN\n\nEND_DATA_BLOCK\n" },
+		{ "trigger": "udt\tUDT", "contents": "TYPE UDTxxx\n\tSTRUCT\n\t// Type Description\n\n\tEND_STRUCT\nEND_TYPE\n" },
+		{ "trigger": "if\tIF", "contents": "IF ${1:a} = ${2:b} THEN\n\t// Statement Section_IF\n\t;\n\tELSIF ${1:a} = c THEN\n\t// Statement Section_ELSIF\n\t;\n\tELSE\n\t// Statement Section_ELSE\n\t;\nEND_IF;\n" },
+		{ "trigger": "case\tCASE", "contents": "CASE value OF\n\t0..3 :\n\t\t// Statements_0..3\n\t\t;\n\t8 :\n\t\t// Statements_8\n\t\t;\n\tELSE:\n\t// Statements_ELSE\n\t;\nEND_CASE;\n" },
+		{ "trigger": "for\tFOR", "contents": "FOR ${1:Control Variable} := ${2:Start} TO ${3:End} BY ${4:Increment} DO\n\t${5:// Statement Section\n\t};\nEND_FOR;\n" },
+		{ "trigger": "while\tWHILE", "contents": "WHILE ${1:a} ${2:=} ${3:b} DO\n\t${4:// Statement Section\n\t};\nEND_WHILE;" },
+		{ "trigger": "repeat\tREPEAT", "contents": "REPEAT\n\t${1:// Statement Section\n\t};\n\tUNTIL ${2:a} ${3:=} ${4:b} \nEND_REPEAT;" }
+	]
+}
